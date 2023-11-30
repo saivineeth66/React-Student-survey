@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import '../Styles/Formscreen.css'
-
+import { useNavigate } from 'react-router-dom'
 
 const SurveyForm = () => {
+  const navigate = useNavigate();
     const headingStyle = {
         border: '5px solid #006633',
         boxShadow: '10px 10px 20px rgba(0.2, 0.2, 0.4, 0.2)',
@@ -68,6 +69,9 @@ const SurveyForm = () => {
 
       const result = await response.json();
       setSubmissionMessage('Survey submitted successfully!');
+      setTimeout(()=> navigate(`/view-surveys`),2000)
+     
+
       // Reset form after successful submission
       setFormData({
       });
@@ -263,7 +267,7 @@ const SurveyForm = () => {
           <textarea className="form-control" id="comments" name="comments" value={formData.comments} onChange={handleInputChange} rows="3"></textarea>
         </div>
 
-      {/* Repeat for other fields as needed */}
+    
 
       {/* Submission Message */}
       {submissionMessage && <div className="alert alert-success" role="alert">{submissionMessage}</div>}

@@ -26,9 +26,6 @@ function SurveyList({surveys, onDelete}) {
       <p><strong>Phone Number:</strong> { survey.phoneNumber }</p>
       <p><strong>Date of Survey:</strong> { survey.dateOfSurvey }</p>
       <p><strong>URL:</strong> {survey.url }</p>
-      {/* <div *ngFor="let aspect of aspectLabels">
-        <p><strong>{{ aspect }}:</strong> {{ survey[aspect] ? 'Yes' : 'No' }}</p>
-      </div> */}
       <p><strong>Interest:</strong> {survey.interest }</p>
       <p><strong>Graduation Month:</strong> { survey.graduationMonth }</p>
       <p><strong>Graduation Year:</strong> { survey.graduationYear }</p>

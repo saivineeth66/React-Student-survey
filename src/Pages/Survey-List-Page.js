@@ -5,26 +5,6 @@ import SurveyService from '../Service/SurveyService';
 function SurveyListPage() {
   const [surveys, setSurveys] = useState([]);
 
-  const handleEdit = (id) => {
-    
-  };
-
-  const handleDelete = async (id) => {
-    try {
-      const response = await fetch(`http://localhost:8080/api/v1/survey/delete/${id}`, {
-        method: 'DELETE',
-      });
-      if (response.ok) {
-        // Filter out the survey that was deleted
-        setSurveys(prevSurveys => prevSurveys.filter(survey => survey.id !== id));
-      } else {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
-    } catch (error) {
-      console.error('Deleting survey failed:', error);
-    }
-  };
-
   useEffect(() => {
   async function fetchSurveys(){
     try{
@@ -47,6 +27,21 @@ function SurveyListPage() {
   fetchSurveys();
 
   }, []);
+  const handleDelete = async (id) => {
+    try {
+      const response = await fetch(`http://localhost:8080/api/v1/survey/delete/${id}`, {
+        method: 'DELETE',
+      });
+      if (response.ok) {
+        // Filter out the survey that was deleted
+        setSurveys(prevSurveys => prevSurveys.filter(survey => survey.id !== id));
+      } else {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+    } catch (error) {
+      console.error('Deleting survey failed:', error);
+    }
+  };
 
   return (
     <div>
