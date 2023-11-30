@@ -1,0 +1,27 @@
+.survey-item {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .survey-details p {
+    margin: 0;
+  }
+  
+  .survey-actions {
+    margin-top: 10px;
+  }
+  
+  .btn-primary {
+    background-color: #006633;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #00572e;
+}
+
+.btn-secondary {
+    background-color:  #FFCC33;
+    color: #fff;
+  }

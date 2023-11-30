@@ -1,24 +1,21 @@
-import logo from './logo.svg';
 import './App.css';
+import React  from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import LandingPage from './Pages/LandingPage';
+import SurveyFormPage from './Pages/Survey-form-Page';
+import SurveyListPage from './Pages/Survey-List-Page';
+import SurveyEditPage from './Pages/Survey-Edit-Page';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<LandingPage></LandingPage>} />
+        <Route path="/fill-survey" element={<SurveyFormPage />} />
+        <Route path="/view-surveys" element={<SurveyListPage/>} />
+        <Route path="/edit-survey/:id" element={<SurveyEditPage/>} />
+      </Routes>
+    </Router>
   );
 }
 
